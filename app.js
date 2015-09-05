@@ -37,7 +37,7 @@ function draw(ctx, y) {
     ctx.fillRect(0, 0, ctx.canvas.width, ctx.canvas.height);
     ctx.strokeStyle = "white";
     ctx.save();
-    ctx.translate(0, ctx.canvas.width / 2);
+    ctx.translate(0, ctx.canvas.height / 2);
     ctx.scale(1, -1);
     ctx.beginPath();
     ctx.moveTo(0, 100 * y[0]);
