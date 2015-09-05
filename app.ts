@@ -8,7 +8,7 @@ function main() {
     var canvas = <HTMLCanvasElement>document.getElementById("canvas");
     canvas.width = window.innerHeight;
     canvas.height = window.innerWidth;
-    document.body.style.transform = "rotate(90deg)";
+    document.body.style["webkitTransform"] = "rotate(90deg)";
     var ctx = canvas.getContext("2d");
     var y = [];
     for (var i = 0; i < N_x; i++) {
