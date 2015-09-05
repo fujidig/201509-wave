@@ -8,6 +8,7 @@ function main() {
     var canvas = <HTMLCanvasElement>document.getElementById("canvas");
     canvas.width = window.innerHeight;
     canvas.height = window.innerWidth;
+    document.body.style.transform = "rotate(90deg)";
     var ctx = canvas.getContext("2d");
     var y = [];
     for (var i = 0; i < N_x; i++) {
@@ -15,14 +16,16 @@ function main() {
     }
     var prev_y: Array<number> = null;
     draw(ctx, y);
-    window.onclick = () => {
+    window.addEventListener("touchup", loop);
+    window.addEventListener("click", loop);
+    function loop() {
         setInterval(function () {
             var new_y = next(y, prev_y);
             draw(ctx, new_y);
             prev_y = y;
             y = new_y;
         }, dt * 1000);
-    };
+    }
 }
 
 function draw(ctx: CanvasRenderingContext2D, y: Array<number>) {
