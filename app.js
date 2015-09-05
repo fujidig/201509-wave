@@ -16,7 +16,7 @@ function main() {
     }
     var prev_y = null;
     draw(ctx, y);
-    window.addEventListener("touchup", loop);
+    document.body.addEventListener("touchstart", loop);
     window.addEventListener("click", loop);
     function loop() {
         setInterval(function () {
